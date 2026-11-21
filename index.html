@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recht lernen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">R</div>
+      <div><strong>Recht lernen</strong><span>Bürgerliches Recht</span></div>
+    </div>
+    <nav>
+      <button class="nav-item active" data-view="dashboard">Übersicht</button>
+      <button class="nav-item" data-view="cards">Karteikarten</button>
+      <button class="nav-item" data-view="quiz">Multiple Choice</button>
+      <button class="nav-item" data-view="exam">Prüfungsmodus</button>
+      <button class="nav-item" data-view="topics">Themen</button>
+    </nav>
+    <div class="sidebar-footer">
+      <button id="resetProgress" class="text-button">Fortschritt zurücksetzen</button>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Bürgerliches Recht &amp; Unternehmensrecht</p>
+        <h1 id="pageTitle">Übersicht</h1>
+      </div>
+      <a class="pdf-button" href="buergerliches-recht.pdf" target="_blank">PDF öffnen</a>
+    </header>
+    <section id="app"></section>
+  </main>
+
+  <dialog id="cardDialog">
+    <form id="cardForm" method="dialog">
+      <h2>Neue Karteikarte</h2>
+      <label>Thema
+        <input name="topic" required maxlength="40">
+      </label>
+      <label>Frage
+        <textarea name="question" required maxlength="300"></textarea>
+      </label>
+      <label>Antwort
+        <textarea name="answer" required maxlength="600"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="secondary">Abbrechen</button>
+        <button value="save" class="primary">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
